@@ -1,0 +1,26 @@
+html, body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+main {
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.board-container {
+    background-color: gray;
+    display: grid;
+    grid-template-columns: repeat(3, 100px);
+    grid-template-rows: repeat(3, 100px);
+    grid-gap: 10px;
+}
+
+.box {
+    background-color: blue;
+    height: 100px;
+    width: 100px;
+}

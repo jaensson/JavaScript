@@ -44,8 +44,9 @@ const palindromeCheck = function(string) {
     let palindrome = true;
     let reversedString = reverseString(string);
 
-    for(let i = 0; i < string.lenght; i++) {
+    for(let i = 0; i < string.length; i++) {
         if(string.charAt(i) !== reversedString.charAt(i)) {
+            console.log('inne')
             palindrome = false;
             break;
         }
@@ -54,7 +55,19 @@ const palindromeCheck = function(string) {
     return palindrome;
 }
 
-let palindromeText = 'kajak'
-palindromeText.toLowerCase();
+let palindromeText = 'Kajak';
+palindromeText = palindromeText.toLowerCase();
+let palindrome = (palindromeCheck(palindromeText)) ? 'är ett palindrom' : 'är INTE ett palindrom';
+console.log(`Övning 4: ${palindromeText} ${palindrome}`);
 
-console.log(`Övning 4: ${palindromeText} ${palindromeCheck("kajak")}`);
+//Övning 5
+let btn = document.getElementById('btn')
+
+btn.onclick = function() {
+    let colors = ['blue', 'red', 'green', 'purple', 'pink', 'orange', 'yellow'];
+    let random = parseInt(Math.random()*colors.length);
+
+    document.querySelector('body').style.backgroundColor = colors[random]
+}
+
+//Övning 6
