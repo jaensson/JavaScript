@@ -134,7 +134,6 @@ const checkIfWon = function() {
     }
 
     if(win) {
-        console.log('Solklar vinst');
         let winner = (!player) ? 'O' : 'X';
         alert(`Grattis till spelare ${winner}`);
         play();
