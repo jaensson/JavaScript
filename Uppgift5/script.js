@@ -48,8 +48,9 @@ function showFruit() {
     return;
 }
 
+// Funkition checkName kollar om användaren skrivit in rätt namn till den visade bilden
 function checkName() {
-    let name;
+    let name;   //Användarens input
     name = inputElem[2].value.toLowerCase();
 
     if(fruitNr == 0) {
@@ -65,8 +66,9 @@ function checkName() {
     return;
 }
 
+// Funktion getNr kontrollerar om användaren skrivit in rätt värde mellan olika intervall
 function getNr(elemNr, high) {
-    let nr;
+    let nr; //Användarens input
 
     nr = inputElem[elemNr].value;
 
@@ -87,10 +89,11 @@ function getNr(elemNr, high) {
     return nr;
 }
 
+// Funktion addFruits lägger till så många bilder av samma frukt som användaren föredrar 
 function addFruits() {
-    let amount;
-    let imgList;
-    let i;
+    let amount; //Användarens input
+    let imgList;    //En lista med alla bild-taggar
+    let i;  //Variabel till for-loopen
 
     amount = inputElem[3].value;
 
