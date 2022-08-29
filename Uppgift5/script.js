@@ -9,6 +9,7 @@ let inputElem   //Referens till alla input-taggar i en array med första index t
 let msgElem;    //Referens till en tag med id message
 let fruitNames; //En array med alla frukter
 let fruitNr;    //Hur många av varje frukt som ska skrivas ut
+let selFruitsElem;  //Referens till elementet som skiver ut användarens antal frukter
 
 function init() {
 	inputElem = []
@@ -21,8 +22,11 @@ function init() {
     fruitNames = ["äpple", "banan", "citron", "apelsin", "päron"];
     fruitNr = 0;
 
+    selFruitsElem = document.getElementById('selectedFruits');
+
     document.getElementById('btn1').onclick = showFruit;
     document.getElementById('btn2').onclick = checkName;
+    document.getElementById('btn3').onclick = addFruits;
 
 } // End init
 
@@ -81,6 +85,28 @@ function getNr(elemNr, high) {
     inputElem[elemNr].value = nr;
 
     return nr;
+}
+
+function addFruits() {
+    let amount;
+    let imgList;
+    let i;
+
+    amount = inputElem[3].value;
+
+    if(fruitNr == 0) {
+        msgElem.innerText = "Välj frukt";
+    } else {
+        amount = getNr(3, 9);
+    }
+
+    if(!isNaN(amount)) {
+        imgList = '';
+        for(i = 0; i < amount; i++) {
+            imgList += "<img src='./pics/fruit" + fruitNr + ".jpg' alt='frukt'>";
+        }
+        selFruitsElem.innerHTML += imgList;
+    }
 }
 
 
